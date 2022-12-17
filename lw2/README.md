@@ -7,11 +7,13 @@
 
 **Для запуска:**
 
-```gcc -std=c99 -pedantic -Wall child1.c -o child1
+```
+gcc -std=c99 -pedantic -Wall child1.c -o child1
 gcc -std=c99 -pedantic -Wall child2.c -o child2
 gcc -std=c99 -pedantic -Wall main.c
-./a.out```
+./a.out
+```
 
 **strace:**
 
-```strace ./a.out```
+`strace ./a.out`
