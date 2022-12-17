@@ -16,4 +16,4 @@ gcc -std=c99 -pedantic -Wall main.c
 
 **strace:**
 
-`strace ./a.out`
+```strace ./a.out```
