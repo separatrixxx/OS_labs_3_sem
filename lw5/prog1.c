@@ -7,11 +7,11 @@ int main() {
         if (arg == 1) {
             int a, b;
             scanf("%d %d", &a, &b);
-            printf("%d\n", gcd(a, b));
+            printf("%d\n", gcf(a, b));
         } else if (arg == 2) {
-            int k;
-            scanf("%d", &k);
-            printf("%f\n", Pi(k));
+            int a, b;
+            scanf("%d %d", &a, &b);
+            printf("%d\n", PrimeCount(a, b));
         } else {
             return -1;
         }
