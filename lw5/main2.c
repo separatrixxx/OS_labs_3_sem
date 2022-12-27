@@ -5,7 +5,7 @@
 
 const char* LIBS[] = {"./liblib1d.so", "./liblib2d.so"};
 typedef int (*gcfFunction)(int A, int B);
-typedef float (*primeFunction)(int A, int B);
+typedef int (*primeFunction)(int A, int B);
 
 void handleOpen(void** lib_handle, const int cur_lib) {
     *lib_handle = dlopen(LIBS[cur_lib], RTLD_NOW);
