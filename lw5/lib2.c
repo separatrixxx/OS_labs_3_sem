@@ -2,7 +2,13 @@
 
 // Drugoy algoritm
 int gcf(int A, int B) {
-    int x = (A>B)? B : A;
+    int x;
+    if (A > B) {
+        x = B;
+    } else {
+        x = A;
+    }
+
     while (A % x != 0 || B % x != 0)
         x--;
     return x;

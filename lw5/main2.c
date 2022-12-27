@@ -3,9 +3,10 @@
 #include <stdlib.h>
 #include "lib.h"
 
-const char* LIBS[] = {"./liblib1d.so", "./liblib2d.so"};
 typedef int (*gcfFunction)(int A, int B);
 typedef int (*primeFunction)(int A, int B);
+
+const char* LIBS[] = {"./liblib1d.so", "./liblib2d.so"};
 
 void handleOpen(void** lib_handle, const int cur_lib) {
     *lib_handle = dlopen(LIBS[cur_lib], RTLD_NOW);
@@ -15,14 +16,14 @@ void handleOpen(void** lib_handle, const int cur_lib) {
     }
 }
 
-void implSet(gcfFunction *gcf, primeFunction *primeCOunt, void* lib_handle) {
+void implSet(gcfFunction *gcf, primeFunction *primeCount, void* lib_handle) {
     *gcf = dlsym(lib_handle, "gcf");
     if (*gcf == NULL) {
         printf("%s\n", dlerror());
         exit(1);
     }
-    *primeCOunt = dlsym(lib_handle, "PrimeCount");
-    if (*primeCOunt == NULL) {
+    *primeCount = dlsym(lib_handle, "PrimeCount");
+    if (*primeCount == NULL) {
         printf("%s\n", dlerror());
         exit(1);
     }
